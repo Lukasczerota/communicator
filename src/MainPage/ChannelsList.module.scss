@@ -1,0 +1,111 @@
+.channelsListContainer  {
+    font-size: 16px;
+    color: rgb(188,171,188);
+     .channelsListH2 {
+        color: white;
+        font-size: 20px;
+        padding: 8px 0;   
+        border-bottom: 0.5px solid rgba(255,255,255,0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        height: 40px;
+    }
+    .channelsHeaderContainer {
+        display: flex;
+        align-items: center;
+        padding: 15px 20px 10px 5px;
+        padding-left: 15px;
+        cursor: pointer;
+
+        .dropArrowIcon {
+            padding: 3px;
+            margin-right: 2px;
+            font-size: 18px;
+            &:hover {
+                background-color: rgba(255,255,255,0.2);
+                border-radius: 3px;
+            }
+        }
+        .channelsListH3 {
+            font-weight: 700;
+            margin:0;
+            padding-left: 2px;  
+        }
+        
+        .channelsVisible {
+            transform: rotate(90deg);
+            transition: 0.3s;
+        }
+        .plusIcon {
+            font-size: 22px;
+            margin-left: auto;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;     
+            
+        }
+        .channelsNotVissible {   
+            transition: 0.3s;
+        }
+        &:hover{
+            color: white;
+            .plusIcon {
+                pointer-events: all;
+                opacity: 1;     
+            }
+        }
+      
+    }
+    .channelContainer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        box-sizing: border-box;
+        padding-right: 20px;
+        // overflow : hidden;
+        // white-space: nowrap;
+        // text-overflow: ellipsis;
+    
+        .channelsListTitle {
+        width: 100%;
+        // position: relative;
+        box-sizing: border-box;
+        overflow : hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight:400;
+        padding-left: 14%;
+        margin: 2px 0;
+        cursor: pointer;
+        &:hover {
+            color: white;
+        }
+
+        }
+        button {    
+            padding: 0;
+            margin: 2px;
+            border: none;
+            text-decoration: none;
+        }
+        .deleteIconContainer {
+            position: relative;
+            // top: 4px;
+            color:rgb(188,171,188);
+            font-size: 22px;
+            .deleteIcon {
+                position: relative;
+                top: 4px;
+            }
+            &:hover {
+            color: white;
+            }
+        }
+    }
+    .currentChannel {
+        background-color: rgb(33, 80, 196);
+    }
+} 

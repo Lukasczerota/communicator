@@ -1,0 +1,20 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Lato', sans-serif;
+
+    .channelsList {
+        background-color:rgb(82,38,83);
+        // width: 350px;
+        flex: 1;
+        min-width: 300px;
+        color: rgb(206, 196, 169);
+    }
+    .messages {
+        background-color: white;
+        flex: 5;
+    }
+}  
+

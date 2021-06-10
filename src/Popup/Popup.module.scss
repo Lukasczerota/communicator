@@ -1,0 +1,87 @@
+.outerPopup {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6); 
+    .innerPopup {
+        background-color: white;  
+        width: 27vw;
+        height: 53vh;
+        border-radius: 5px;
+        position: relative;-color: white;  
+        width: 27vw;
+        height: 53vh;
+        border-radius: 5px;
+        position: relative;
+        .popupContent {
+            padding: 5px 25px;
+            font-size: 14px;
+            .popupH3 {
+                font-size: 24px;
+            }
+            .popupH5 {
+                font-weight: 400;
+                font-size:15px;
+                margin: 0 0 11px 0;
+            }
+            .label {
+                display: inline-block;
+                padding: 8px 0 5px 0;
+                font-weight: 400;
+                .inputDescription {
+                    font-weight: 700;
+                }
+            }
+            input {
+                width: 95%;
+                padding: 0px;
+                margin: 0px;
+                border-radius: 3px;
+                border: solid 0.1px;
+                height: 30px;
+                font-size: 13px;
+                padding-left: 10px;
+                &:focus {
+                    box-shadow: 0 0 5px blue;
+                }
+                &:-webkit-autofill::first-line {
+                    font-family: 'Lato', sans-serif;
+                    font-size: 13px;                      
+                }
+            }
+            p {
+                font-size: 11px;
+                margin-top: 2px;
+            }
+            .createChannelButton {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                font-size: 15px;
+                padding: 5px 12px;
+                color: darkslategrey;
+                outline: none;
+                border: none;
+                background: lightgray;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+        color: #1D1C1D;
+
+        .closeButton {
+            position: absolute;
+            top: 29px;
+            right: 15px;
+            background: white;
+            border: none;
+            font-size: 22px;
+            font-weight: 400;
+            cursor: pointer;
+        }
+    }
+}

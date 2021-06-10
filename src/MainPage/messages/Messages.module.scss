@@ -1,0 +1,52 @@
+.messagesContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 18px;
+    word-wrap: break-word;
+    overflow: scroll;
+    .channelName{
+        min-height: 40px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 8px 0 8px 8px;
+        border-bottom: 0.5px solid rgba(0,0,0,0.5);
+        cursor: pointer;
+    }
+    .displayedMessages {
+        flex:1;
+        box-sizing: border-box;
+        width: 100%;
+        word-wrap: break-word;
+        .messageContainer {
+            padding: 10px 0 0 15px;
+            display: flex;
+            &:hover{
+                background-color: rgba(0,0,0,0.05)
+            }
+            .avatarContainer {
+                width: 40px;
+                height: 40px;
+                padding-right: 7px;
+                .userAvatar {
+                    width: 100%;
+                }
+            }
+            
+        }
+        .message {
+            padding-left: 5px;
+            flex: 1;
+            .userName {
+                font-weight: 700;
+            }
+            p {
+                display: inline-block;
+                margin: 0;
+            }
+        }
+    }
+}
