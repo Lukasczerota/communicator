@@ -38,9 +38,8 @@ function Messages({ token, currentChannelId, userId, currentChannelName }) {
               <img src={avatar} alt="" className={styles.userAvatar} />
             </div>
             <div className={styles.message}>
-              <p className={styles.userName}>{message.u.username}</p>{' '}
-              <p>time</p>
-              <br /> {message.msg}
+              <p className={styles.userName}>{message.u.username}</p> <br />{' '}
+              {message.msg}
             </div>
           </div>
         ))}

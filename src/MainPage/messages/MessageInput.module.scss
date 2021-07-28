@@ -1,84 +1,68 @@
 .mainContainer {
-    border-width: 0 25px 25px 25px;
-    border-style: solid;
-    border-color: white;
-    height: 60px;
-    // position: fixed;
-    bottom: 50px;
-    left: 10px;
+  border-width: 0 25px 25px 25px;
+  border-style: solid;
+  border-color: white;
+  height: 60px;
+  bottom: 50px;
+  left: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  .inputContainer {
     width: 100%;
-    box-sizing: border-box;
-    .inputContainer {
-        width: 100%;
-        height: 60px;
-        display: flex;
-        position: relative;
-        .inputMessage {
-        width: 100%;
-        height: 100%;
-        // position: relative;
-        padding: 0 75px 0 25px;
-        word-wrap: break-word;
-        border: 0;
-        border: solid 1px black;
-        font-size: 15px;
-        // text-align: center;
-        border-radius: 10px;
-        &::placeholder {
-            font-size: 15px;
-        }
-        &:focus {
-            // border: none;
-            outline: none;
-        }
-    }
-    .sendMessageButton {
-        height: 62px;
-        width: 50px;
-        position: absolute;
-        // bottom: 17px;
-        right: 0px;
-        border-radius: 0 10px 10px 0;
-        border: solid 1px black;
-    }
-        
-        // border-style: solid;
-        // border-color: white;
-        // height: 30px;
-    }
-    // border-radius: 10px;
-    // position: relative;
-    // top: 0px;
-    // box-sizing: border-box;
-    // left: 0px;
-    // width: 50%;
+    height: 60px;
     display: flex;
-    justify-content: center;
-    // background-color: black;
+    position: relative;
     .inputMessage {
-        width: 100%;
-        height: 100%;
-        padding: 0 75px 0 25px;
-        word-wrap: break-word;
-        border: 0;
-        border: solid 1px black;
+      width: 100%;
+      height: 100%;
+      padding: 0 75px 0 25px;
+      word-wrap: break-word;
+      border: 0;
+      border: solid 1px black;
+      font-size: 15px;
+      border-radius: 10px;
+      &::placeholder {
         font-size: 15px;
-        // text-align: center;
-        border-radius: 10px;
-        &::placeholder {
-            font-size: 15px;
-        }
-        &:focus {
-            // border: none;
-            outline: none;
-        }
+      }
+      &:focus {
+        outline: none;
+      }
     }
     .sendMessageButton {
-        height: 62px;
-        width: 50px;
-        position: absolute;
-        right: 25px;
-        border-radius: 0 10px 10px 0;
-        border: solid 1px black;
+      height: 62px;
+      width: 50px;
+      position: absolute;
+      right: 0px;
+      border-radius: 0 10px 10px 0;
+      border: solid 1px black;
     }
-} 
+  }
+
+  display: flex;
+  justify-content: center;
+
+  .inputMessage {
+    width: 100%;
+    height: 100%;
+    padding: 0 75px 0 25px;
+    word-wrap: break-word;
+    border: 0;
+    border: solid 1px black;
+    font-size: 15px;
+    border-radius: 10px;
+    &::placeholder {
+      font-size: 15px;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  .sendMessageButton {
+    height: 62px;
+    width: 50px;
+    position: absolute;
+    right: 25px;
+    border-radius: 0 10px 10px 0;
+    border: solid 1px black;
+  }
+}
