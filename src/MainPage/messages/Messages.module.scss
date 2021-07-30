@@ -3,10 +3,9 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: 1600px;
+  //   width: 83vw;
   font-size: 18px;
-  word-wrap: break-word;
-  overflow: scroll;
+  overflow: auto;
   .channelName {
     box-sizing: border-box;
     min-height: 40px;
@@ -24,7 +23,7 @@
     box-sizing: border-box;
     width: 100%;
     word-wrap: break-word;
-    overflow: scroll;
+    overflow: auto;
     .messageContainer {
       box-sizing: border-box;
       padding: 10px 0 0 15px;
@@ -46,6 +45,8 @@
         flex: 1;
         width: 90%;
         box-sizing: border-box;
+        word-break: break-word;
+
         .userName {
           font-weight: 700;
         }
