@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/communicator/static/css/main.f075d79a.chunk.css",
+    "main.js": "/communicator/static/js/main.4293e4d0.chunk.js",
+    "main.js.map": "/communicator/static/js/main.4293e4d0.chunk.js.map",
+    "runtime-main.js": "/communicator/static/js/runtime-main.4a965c9c.js",
+    "runtime-main.js.map": "/communicator/static/js/runtime-main.4a965c9c.js.map",
+    "static/js/2.e39cdf7c.chunk.js": "/communicator/static/js/2.e39cdf7c.chunk.js",
+    "static/js/2.e39cdf7c.chunk.js.map": "/communicator/static/js/2.e39cdf7c.chunk.js.map",
+    "index.html": "/communicator/index.html",
+    "static/css/main.f075d79a.chunk.css.map": "/communicator/static/css/main.f075d79a.chunk.css.map",
+    "static/js/2.e39cdf7c.chunk.js.LICENSE.txt": "/communicator/static/js/2.e39cdf7c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4a965c9c.js",
+    "static/js/2.e39cdf7c.chunk.js",
+    "static/css/main.f075d79a.chunk.css",
+    "static/js/main.4293e4d0.chunk.js"
+  ]
+}
