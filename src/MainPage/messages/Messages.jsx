@@ -23,7 +23,6 @@ function Messages({ token, currentChannelId, userId, currentChannelName }) {
   };
 
   useEffect(() => {
-    console.log(currentChannelId, token, userId);
     updateMessages();
   }, [currentChannelId, token, userId]);
 
@@ -33,7 +32,6 @@ function Messages({ token, currentChannelId, userId, currentChannelName }) {
       <div className={styles.displayedMessages}>
         {messages.map((message) => (
           <div key={message._id} className={styles.messageContainer}>
-            {console.log(message)}
             <div className={styles.avatarContainer}>
               <img src={avatar} alt="" className={styles.userAvatar} />
             </div>

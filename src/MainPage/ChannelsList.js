@@ -118,7 +118,6 @@ function ChannelsList({
                       : ''
                   }`}
                   onClick={(e) => {
-                    console.log(channel);
                     e.stopPropagation();
                     deleteChannel(channel._id);
                   }}
