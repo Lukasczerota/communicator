@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { API_URL } from '../../api';
 import styles from './MessageInput.module.scss';
 import { MdSend } from 'react-icons/md';
@@ -9,7 +9,6 @@ function MessageInput({
   currentChannelId,
   userId,
   updateMessages,
-  setMessages,
   currentChannelName,
 }) {
   const [messageText, setMessageText] = useState('');

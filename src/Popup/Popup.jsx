@@ -3,7 +3,6 @@ import styles from './Popup.module.scss';
 import { RiCloseFill } from 'react-icons/ri';
 
 function Popup({
-  children,
   visible,
   setIsAddChannelPopupVisible,
   setNewChannelName,
