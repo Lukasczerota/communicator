@@ -6,6 +6,7 @@
   //   width: 83vw;
   font-size: 18px;
   overflow: auto;
+
   .channelName {
     box-sizing: border-box;
     min-height: 40px;
@@ -18,28 +19,34 @@
     flex: 1;
     height: 50px;
   }
+
   .displayedMessages {
     flex: 15;
     box-sizing: border-box;
     width: 100%;
     word-wrap: break-word;
     overflow: auto;
+
     .messageContainer {
       box-sizing: border-box;
       padding: 10px 0 0 15px;
       display: flex;
       width: 100%;
+
       &:hover {
         background-color: rgba(0, 0, 0, 0.05);
       }
+
       .avatarContainer {
         width: 40px;
         height: 40px;
         padding-right: 7px;
+
         .userAvatar {
           width: 100%;
         }
       }
+
       .message {
         padding-left: 5px;
         flex: 1;
@@ -50,6 +57,7 @@
         .userName {
           font-weight: 700;
         }
+
         p {
           display: inline-block;
           margin: 0;
@@ -57,6 +65,7 @@
       }
     }
   }
+
   .messageInput {
     flex: 1;
   }

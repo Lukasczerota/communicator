@@ -1,6 +1,7 @@
 .channelsListContainer {
   font-size: 16px;
   color: rgb(188, 171, 188);
+
   .channelsListH2 {
     color: white;
     font-size: 20px;
@@ -12,6 +13,7 @@
     margin: 0;
     height: 40px;
   }
+
   .channelsHeaderContainer {
     display: flex;
     align-items: center;
@@ -23,11 +25,13 @@
       padding: 3px;
       margin-right: 2px;
       font-size: 18px;
+
       &:hover {
         background-color: rgba(255, 255, 255, 0.2);
         border-radius: 3px;
       }
     }
+
     .channelsListH3 {
       font-weight: 700;
       margin: 0;
@@ -38,6 +42,7 @@
       transform: rotate(90deg);
       transition: 0.3s;
     }
+
     .plusIcon {
       font-size: 22px;
       margin-left: auto;
@@ -45,17 +50,21 @@
       opacity: 0;
       transition: opacity 0.3s;
     }
-    .channelsNotVissible {
+
+    .channelsNotVisible {
       transition: 0.3s;
     }
+
     &:hover {
       color: white;
+
       .plusIcon {
         pointer-events: all;
         opacity: 1;
       }
     }
   }
+
   .channelContainer {
     width: 100%;
     display: flex;
@@ -74,29 +83,35 @@
       padding-left: 14%;
       margin: 2px 0;
       cursor: pointer;
+
       &:hover {
         color: white;
       }
     }
+
     button {
       padding: 0;
       margin: 2px;
       border: none;
       text-decoration: none;
     }
+
     .deleteIconContainer {
       position: relative;
       color: rgb(188, 171, 188);
       font-size: 22px;
+
       .deleteIcon {
         position: relative;
         top: 4px;
       }
+
       &:hover {
         color: white;
       }
     }
   }
+
   .currentChannel {
     background-color: rgb(33, 80, 196);
   }

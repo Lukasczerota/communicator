@@ -7,11 +7,13 @@
   left: 10px;
   width: 100%;
   box-sizing: border-box;
+
   .inputContainer {
     width: 100%;
     height: 60px;
     display: flex;
     position: relative;
+
     .inputMessage {
       width: 100%;
       height: 100%;
@@ -21,13 +23,16 @@
       border: solid 1px black;
       font-size: 15px;
       border-radius: 10px;
+
       &::placeholder {
         font-size: 15px;
       }
+
       &:focus {
         outline: none;
       }
     }
+
     .sendMessageButton {
       height: 62px;
       width: 50px;
@@ -50,13 +55,16 @@
     border: solid 1px black;
     font-size: 15px;
     border-radius: 10px;
+
     &::placeholder {
       font-size: 15px;
     }
+
     &:focus {
       outline: none;
     }
   }
+
   .sendMessageButton {
     height: 62px;
     width: 50px;
