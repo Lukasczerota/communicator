@@ -6,6 +6,7 @@ import Popup from '../Popup/Popup';
 import { IoMdArrowDropright, IoMdArrowDropdown } from 'react-icons/io';
 import { BiPlus } from 'react-icons/bi';
 import { MdDelete } from 'react-icons/md';
+import ChannelsListItem from './ChannelsListItem';
 
 function ChannelsList({
   token,
@@ -94,37 +95,14 @@ function ChannelsList({
       {showChannels
         ? channelsList.map((channel) => {
             return (
-              <div
+              <ChannelsListItem
                 key={channel._id}
-                className={`${styles.channelContainer} ${
-                  channel._id === currentChannelId ? styles.currentChannel : ''
-                }`}
-              >
-                <h4
-                  className={`${styles.channelsListTitle} 
-                  }`}
-                  key={channel._id}
-                  onClick={() => {
-                    setCurrentChannelId(channel._id);
-                    setCurrentChannelName(channel.name);
-                  }}
-                >
-                  # {channel.name}
-                </h4>
-                <span
-                  className={`${styles.deleteIconContainer} ${
-                    channel._id === currentChannelId
-                      ? styles.currentChannel
-                      : ''
-                  }`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    deleteChannel(channel._id);
-                  }}
-                >
-                  <MdDelete className={styles.deleteIcon} />
-                </span>
-              </div>
+                channel={channel}
+                setCurrentChannelId={setCurrentChannelId}
+                currentChannelId={currentChannelId}
+                setCurrentChannelName={setCurrentChannelName}
+                deleteChannel={deleteChannel}
+              />
             );
           })
         : ''}
