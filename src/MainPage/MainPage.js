@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styles from './MainPage.module.scss';
 import ChannelsList from './ChannelsList';
 import Messages from './messages/Messages';

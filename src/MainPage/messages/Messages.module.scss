@@ -1,52 +1,71 @@
 .messagesContainer {
-    height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-size: 18px;
+  overflow: auto;
+
+  .channelName {
+    box-sizing: border-box;
+    min-height: 40px;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    padding: 8px 0 8px 8px;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    flex: 1;
+    height: 50px;
+  }
+
+  .displayedMessages {
+    flex: 15;
     box-sizing: border-box;
     width: 100%;
-    font-size: 18px;
     word-wrap: break-word;
-    overflow: scroll;
-    .channelName{
-        min-height: 40px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        padding: 8px 0 8px 8px;
-        border-bottom: 0.5px solid rgba(0,0,0,0.5);
-        cursor: pointer;
-    }
-    .displayedMessages {
-        flex:1;
+    overflow: auto;
+
+    .messageContainer {
+      box-sizing: border-box;
+      padding: 10px 0 0 15px;
+      display: flex;
+      width: 100%;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      .avatarContainer {
+        width: 40px;
+        height: 40px;
+        padding-right: 7px;
+
+        .userAvatar {
+          width: 100%;
+        }
+      }
+
+      .message {
+        padding-left: 5px;
+        flex: 1;
+        width: 90%;
         box-sizing: border-box;
-        width: 100%;
-        word-wrap: break-word;
-        .messageContainer {
-            padding: 10px 0 0 15px;
-            display: flex;
-            &:hover{
-                background-color: rgba(0,0,0,0.05)
-            }
-            .avatarContainer {
-                width: 40px;
-                height: 40px;
-                padding-right: 7px;
-                .userAvatar {
-                    width: 100%;
-                }
-            }
-            
+        word-break: break-word;
+
+        .userName {
+          font-weight: 700;
         }
-        .message {
-            padding-left: 5px;
-            flex: 1;
-            .userName {
-                font-weight: 700;
-            }
-            p {
-                display: inline-block;
-                margin: 0;
-            }
+
+        p {
+          display: inline-block;
+          margin: 0;
         }
+      }
     }
+  }
+
+  .messageInput {
+    flex: 1;
+  }
 }

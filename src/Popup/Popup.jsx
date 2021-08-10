@@ -1,10 +1,8 @@
 import React from 'react';
 import styles from './Popup.module.scss';
-// import { Button } from 'antd';
 import { RiCloseFill } from 'react-icons/ri';
 
 function Popup({
-  children,
   visible,
   setIsAddChannelPopupVisible,
   setNewChannelName,
@@ -34,7 +32,6 @@ function Popup({
               }}
             ></input>
             <label className={styles.label} htmlFor="description">
-              {/* Optional */}
               <span className={styles.inputDescription}>Description</span>{' '}
               {'(optional)'}
             </label>
@@ -61,15 +58,6 @@ function Popup({
           >
             <RiCloseFill />
           </button>
-          {/* <Tooltip title="search">
-            <Button type="primary" shape="circle" icon={<SearchOutlined />} />
-          </Tooltip>
-          <Button type="primary" shape="circle">
-            A
-          </Button>
-          <Button type="primary" icon={<SearchOutlined />}>
-            Search
-          </Button> */}
         </div>
       </div>
     );
