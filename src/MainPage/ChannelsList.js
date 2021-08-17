@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { API_URL } from '../api';
 import styles from './ChannelsList.module.scss';
@@ -22,30 +23,29 @@ function ChannelsList({
   );
   const [channelsList, setChannelsList] = useState([]);
   const [showChannels, setShowChannels] = useState(false);
-
-  const getChannelsList = () => {
-    fetch(API_URL + 'channels.list.joined', {
-      method: 'GET',
-      headers: {
-        'X-Auth-Token': token,
-        'X-User-Id': userId,
-      },
-    })
-      .then((response) => response.json())
-      .then((response) => setChannelsList(response.channels));
+  let config = {
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Auth-Token': token,
+      'X-User-Id': userId,
+    },
   };
+  const getChannelsList = () => {
+    axios
+      .get(API_URL + 'channels.list.joined', config)
+      .then((response) => setChannelsList(response.data.channels));
+  };
+
   const createChannel = function () {
-    fetch('https://open.rocket.chat/api/v1/channels.create', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Auth-Token': token,
-        'X-User-Id': userId,
-      },
-      body: JSON.stringify({
-        name: newChannelName,
-      }),
-    }).then((response) => getChannelsList());
+    axios
+      .post(
+        API_URL + 'channels.create',
+        {
+          name: newChannelName,
+        },
+        config
+      )
+      .then((response) => getChannelsList());
   };
 
   useEffect(() => {
@@ -53,17 +53,15 @@ function ChannelsList({
   }, []);
 
   const deleteChannel = (roomId) => {
-    fetch(API_URL + 'channels.delete', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Auth-Token': token,
-        'X-User-Id': userId,
-      },
-      body: JSON.stringify({
-        roomId,
-      }),
-    }).then((response) => getChannelsList());
+    axios
+      .post(
+        API_URL + 'channels.delete',
+        {
+          roomId,
+        },
+        config
+      )
+      .then((response) => getChannelsList());
   };
 
   return (

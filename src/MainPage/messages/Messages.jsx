@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { API_URL } from '../../api';
@@ -7,19 +8,18 @@ import styles from './Messages.module.scss';
 
 function Messages({ token, currentChannelId, userId, currentChannelName }) {
   const [messages, setMessages] = useState([]);
+  let config = {
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Auth-Token': token,
+      'X-User-Id': userId,
+    },
+  };
+
   const updateMessages = () => {
-    fetch(API_URL + 'channels.messages?roomId=' + currentChannelId, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Auth-Token': token,
-        'X-User-Id': userId,
-      },
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        setMessages(response.messages.reverse());
-      });
+    axios
+      .get(API_URL + 'channels.messages?roomId=' + currentChannelId, config)
+      .then((response) => setMessages(response.data.messages.reverse()));
   };
 
   useEffect(() => {
