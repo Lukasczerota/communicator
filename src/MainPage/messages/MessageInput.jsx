@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { API_URL } from '../../api';
 import styles from './MessageInput.module.scss';
 import { MdSend } from 'react-icons/md';
+import axios from 'axios';
 
 function MessageInput({
   token,
@@ -12,21 +13,26 @@ function MessageInput({
   currentChannelName,
 }) {
   const [messageText, setMessageText] = useState('');
+  let config = {
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Auth-Token': token,
+      'X-User-Id': userId,
+    },
+  };
   const sendMessage = function () {
-    fetch(API_URL + 'chat.sendMessage', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Auth-Token': token,
-        'X-User-Id': userId,
-      },
-      body: JSON.stringify({
-        message: {
-          msg: messageText,
-          rid: currentChannelId,
+    axios
+      .post(
+        API_URL + 'chat.sendMessage',
+        {
+          message: {
+            msg: messageText,
+            rid: currentChannelId,
+          },
         },
-      }),
-    }).then((response) => updateMessages());
+        config
+      )
+      .then((response) => updateMessages());
   };
 
   return (

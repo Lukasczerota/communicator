@@ -4,32 +4,37 @@ import { API_URL } from '../api';
 import styles from './LoginPage.module.scss';
 import loginImage from './img.png';
 import Tilt from 'react-tilt';
+import axios from 'axios';
 
 function LoginPage({ onSuccess }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState('');
   const [error, setError] = useState('');
+  let config = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
 
   const login = function () {
     setLoading(true);
-    fetch(API_URL + 'login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        user: username,
-        password: password,
-      }),
-    })
-      .then((response) => response.json())
+    axios
+      .post(
+        API_URL + 'login',
+        {
+          user: username,
+          password: password,
+        },
+        config
+      )
       .then((response) => {
+        console.log(response);
         setLoading(false);
-        if (response.status !== 'success') {
+        if (response.data.status !== 'success') {
           setError('Login failed, try again!');
         } else {
-          onSuccess(response.data);
+          onSuccess(response.data.data);
         }
       });
   };
