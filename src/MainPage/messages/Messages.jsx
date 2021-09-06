@@ -8,7 +8,7 @@ import styles from './Messages.module.scss';
 
 function Messages({ token, currentChannelId, userId, currentChannelName }) {
   const [messages, setMessages] = useState([]);
-  let config = {
+  const config = {
     headers: {
       'Content-Type': 'application/json',
       'X-Auth-Token': token,
