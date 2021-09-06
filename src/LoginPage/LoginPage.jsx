@@ -29,12 +29,12 @@ function LoginPage({ onSuccess }) {
         config
       )
       .then((response) => {
-        console.log(response);
+        const { status, data } = response.data;
         setLoading(false);
-        if (response.data.status !== 'success') {
+        if (status !== 'success') {
           setError('Login failed, try again!');
         } else {
-          onSuccess(response.data.data);
+          onSuccess(data);
         }
       });
   };

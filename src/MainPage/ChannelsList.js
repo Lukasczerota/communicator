@@ -23,7 +23,7 @@ function ChannelsList({
   );
   const [channelsList, setChannelsList] = useState([]);
   const [showChannels, setShowChannels] = useState(false);
-  let config = {
+  const config = {
     headers: {
       'Content-Type': 'application/json',
       'X-Auth-Token': token,
