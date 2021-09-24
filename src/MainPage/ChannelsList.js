@@ -6,24 +6,24 @@ import styles from './ChannelsList.module.scss';
 import Popup from '../Popup/Popup';
 import { IoMdArrowDropright, IoMdArrowDropdown } from 'react-icons/io';
 import { BiPlus } from 'react-icons/bi';
-import { MdDelete } from 'react-icons/md';
 import ChannelsListItem from './ChannelsListItem';
+import { useSelector } from 'react-redux';
 
 function ChannelsList({
-  token,
-  userId,
-  setCurrentChannelId,
-  currentChannelId,
-  name,
+  // setCurrentChannelId,
+  // currentChannelId,
   setCurrentChannelName,
 }) {
+  const userData = useSelector((state) => state.userData);
+  // const currentChannelId = useSelector((state) => state.currentChannelId);
+  const { name, token, userId } = userData;
   const [newChannelName, setNewChannelName] = useState('');
   const [isAddChannelPopupVisible, setIsAddChannelPopupVisible] = useState(
     false
   );
   const [channelsList, setChannelsList] = useState([]);
   const [showChannels, setShowChannels] = useState(false);
-  let config = {
+  const config = {
     headers: {
       'Content-Type': 'application/json',
       'X-Auth-Token': token,
@@ -96,8 +96,8 @@ function ChannelsList({
               <ChannelsListItem
                 key={channel._id}
                 channel={channel}
-                setCurrentChannelId={setCurrentChannelId}
-                currentChannelId={currentChannelId}
+                // setCurrentChannelId={setCurrentChannelId}
+                // currentChannelId={currentChannelId}
                 setCurrentChannelName={setCurrentChannelName}
                 deleteChannel={deleteChannel}
               />

@@ -1,14 +1,18 @@
 import axios from 'axios';
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { API_URL } from '../../api';
 import avatar from './avatar.png';
 import MessageInput from './MessageInput';
 import styles from './Messages.module.scss';
 
-function Messages({ token, currentChannelId, userId, currentChannelName }) {
+function Messages({ token, userId, currentChannelName }) {
   const [messages, setMessages] = useState([]);
-  let config = {
+  const currentChannelId = useSelector(
+    (state) => state.currentChannel.currentChannelId
+  );
+  const config = {
     headers: {
       'Content-Type': 'application/json',
       'X-Auth-Token': token,
@@ -45,7 +49,7 @@ function Messages({ token, currentChannelId, userId, currentChannelName }) {
       <div className={styles.messageInput}>
         <MessageInput
           token={token}
-          currentChannelId={currentChannelId}
+          // currentChannelId={currentChannelId}
           userId={userId}
           updateMessages={updateMessages}
           setMessages={setMessages}

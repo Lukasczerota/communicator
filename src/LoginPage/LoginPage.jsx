@@ -1,21 +1,24 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { API_URL } from '../api';
 import styles from './LoginPage.module.scss';
 import loginImage from './img.png';
 import Tilt from 'react-tilt';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { setUserData } from '../store/userDataReducer';
 
-function LoginPage({ onSuccess }) {
+function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState('');
   const [error, setError] = useState('');
-  let config = {
+  const config = {
     headers: {
       'Content-Type': 'application/json',
     },
   };
+  const dispatch = useDispatch();
 
   const login = function () {
     setLoading(true);
@@ -29,12 +32,12 @@ function LoginPage({ onSuccess }) {
         config
       )
       .then((response) => {
-        console.log(response);
+        const { status, data } = response.data;
         setLoading(false);
-        if (response.data.status !== 'success') {
+        if (status !== 'success') {
           setError('Login failed, try again!');
         } else {
-          onSuccess(response.data.data);
+          dispatch(setUserData(data));
         }
       });
   };

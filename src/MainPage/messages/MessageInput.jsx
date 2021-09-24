@@ -4,15 +4,20 @@ import { API_URL } from '../../api';
 import styles from './MessageInput.module.scss';
 import { MdSend } from 'react-icons/md';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 function MessageInput({
   token,
-  currentChannelId,
+  // currentChannelId,
   userId,
   updateMessages,
   currentChannelName,
 }) {
   const [messageText, setMessageText] = useState('');
+  const currentChannelId = useSelector(
+    (state) => state.currentChannel.currentChannelId
+  );
+
   let config = {
     headers: {
       'Content-Type': 'application/json',
