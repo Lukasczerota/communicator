@@ -2,22 +2,19 @@ import React, { useState } from 'react';
 import LoginPage from './LoginPage/LoginPage';
 import MainPage from './MainPage/MainPage';
 import './App.css';
+import { useSelector } from 'react-redux';
 
 function App() {
-  const [userData, setUserData] = useState('');
+  const token = useSelector((state) => state.userData.token);
 
-  if (userData) {
+  if (token) {
     return (
       <div>
-        <MainPage
-          token={userData.authToken}
-          userId={userData.userId}
-          name={userData.me.name}
-        />
+        <MainPage />
       </div>
     );
   } else {
-    return <LoginPage onSuccess={setUserData} />;
+    return <LoginPage />;
   }
 }
 

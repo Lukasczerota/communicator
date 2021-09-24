@@ -1,14 +1,20 @@
 import React from 'react';
 import { MdDelete } from 'react-icons/md';
 import styles from './ChannelsListItem.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCurrentChannelId } from '../store/currentChannelReducer';
 
 function ChannelsListItem({
   channel,
-  setCurrentChannelId,
-  currentChannelId,
+  // setCurrentChannelId,
+  // currentChannelId,
   setCurrentChannelName,
   deleteChannel,
 }) {
+  const dispatch = useDispatch();
+  const currentChannelId = useSelector(
+    (state) => state.currentChannel.currentChannelId
+  );
   return (
     <div
       className={`${styles.channelContainer} ${
@@ -20,7 +26,9 @@ function ChannelsListItem({
   }`}
         key={channel._id}
         onClick={() => {
-          setCurrentChannelId(channel._id);
+          // console.log('bb');
+          dispatch(setCurrentChannelId(channel._id));
+          // setCurrentChannelId(channel._id);
           setCurrentChannelName(channel.name);
         }}
       >

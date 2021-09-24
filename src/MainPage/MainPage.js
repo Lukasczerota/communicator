@@ -3,20 +3,23 @@ import { useState } from 'react';
 import styles from './MainPage.module.scss';
 import ChannelsList from './ChannelsList';
 import Messages from './messages/Messages';
+import { useSelector } from 'react-redux';
 
-function MainPage({ token, userId, name }) {
-  const [currentChannelId, setCurrentChannelId] = useState('');
+function MainPage() {
+  // const [currentChannelId, setCurrentChannelId] = useState('');
   const [currentChannelName, setCurrentChannelName] = useState('');
+  const userData = useSelector((state) => state.userData);
+  const currentChannelId = useSelector(
+    (state) => state.currentChannel.currentChannelId
+  );
 
+  const { token, name, userId } = userData;
   return (
     <div className={styles.container}>
       <div className={styles.channelsList}>
         <ChannelsList
-          token={token}
-          userId={userId}
-          name={name}
-          setCurrentChannelId={setCurrentChannelId}
-          currentChannelId={currentChannelId}
+          // setCurrentChannelId={setCurrentChannelId}
+          // currentChannelId={currentChannelId}
           setCurrentChannelName={setCurrentChannelName}
         />
       </div>
@@ -24,7 +27,7 @@ function MainPage({ token, userId, name }) {
         {currentChannelId && (
           <Messages
             token={token}
-            currentChannelId={currentChannelId}
+            // currentChannelId={currentChannelId}
             userId={userId}
             currentChannelName={currentChannelName}
           />
